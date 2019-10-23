@@ -18,7 +18,7 @@
         
         <hr>
         
-        <a href="${pageContext.request.contextPath} }">Back to the Battle Arena page</a>
+        <a href="${pageContext.request.contextPath}/employees">Back to the Battle Arena page</a>
 
     </body>
 
