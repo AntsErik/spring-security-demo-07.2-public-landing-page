@@ -35,6 +35,14 @@
         
         </p>
         
+        <!-- Adding a link for access to /systems .. this is for dragons -->
+        
+        <p>
+            <a href="${pageContext.request.contextPath}/systems">Dragons Eye Peek</a>
+            (Dragons only!)
+        
+        </p>
+        
         <hr>
         
         <!-- Add a logout button -->
