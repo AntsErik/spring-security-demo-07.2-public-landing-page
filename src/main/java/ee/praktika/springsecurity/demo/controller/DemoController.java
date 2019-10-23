@@ -17,9 +17,9 @@ public class DemoController {
         return "home";
     }
 
-    //add request mapping for /leaders" )
-    public String showLeaders(){
+    //add request mapping for /plainswalker" )
+    public String showPlainswalker(){
 
-        return "leaders";
+        return "plainswalker";
     }
 }

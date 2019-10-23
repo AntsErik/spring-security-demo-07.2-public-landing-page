@@ -27,7 +27,7 @@
         
         <hr>
         
-        <!-- Add a link to point to7leaders ... this is for plainswalkers -->
+        <!-- Add a link to point to /leaders ... this is for plainswalkers -->
         
         <p>
             <a href="${pageContext.request.contextPath} }">Plainswalkers meeting</a>
