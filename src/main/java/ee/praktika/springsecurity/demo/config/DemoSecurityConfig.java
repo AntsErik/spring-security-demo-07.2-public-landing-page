@@ -20,7 +20,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
         UserBuilder users = User.withDefaultPasswordEncoder();
 
         auth.inMemoryAuthentication()
-            .withUser( users.username( "Liliana" ).password( "MTG247" ).roles( "PLAINSWALKER" ) )
+            .withUser( users.username( "Liliana" ).password( "MTG247" ).roles( "PLAINSWALKER", "CREATURE" ) )
             .withUser( users.username( "Ugin" ).password( "MTG247" ).roles( "DRAGON", "PLAINSWALKER", "CREATURE" ) )
             .withUser( users.username( "Suntail Hawk" ).password( "MTG247" ).roles( "CREATURE", "BIRD" ) );
     }
@@ -31,8 +31,8 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
             .antMatchers( "/" ).permitAll() // allow public access to home page
             .antMatchers( "/employees" ).hasRole( "CREATURE" )
-            .antMatchers( "/leaders/**" ).hasRole( "DRAGON" )
-            .antMatchers( "/systems/**" ).hasRole( "PLAINSWALKER" )
+            .antMatchers( "/leaders/**" ).hasRole( "PLAINSWALKER" )
+            .antMatchers( "/systems/**" ).hasRole( "DRAGON" )
             .and()
             .formLogin()
             .loginPage( "/showMyLoginPage" ) //Show our custom form at the request mapping
