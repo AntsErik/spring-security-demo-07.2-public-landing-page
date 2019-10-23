@@ -29,12 +29,18 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure( HttpSecurity http ) throws Exception{
 
         http.authorizeRequests()
-            .anyRequest().authenticated() //Any request to the app must be authenticated (in example logged in)
+            .antMatchers( "/" ).permitAll() // allow public access to home page
+            .antMatchers( "/employees" ).hasRole( "CREATURE" )
+            .antMatchers( "/leaders/**" ).hasRole( "DRAGON" )
+            .antMatchers( "/systems/**" ).hasRole( "PLAINSWALKER" )
             .and()
             .formLogin()
             .loginPage( "/showMyLoginPage" ) //Show our custom form at the request mapping
             .loginProcessingUrl( "/authenticateTheUser" ) //Login form should POST data to this URL for processing - (check user id and password)
             .permitAll() //Allow everyone to see the login page. No need to be logged in for that.
-            .and().logout().permitAll(); //adds logout permission
+            .and()
+            .logout()
+            .logoutSuccessUrl( "/" ) // after logout then redirect to landing page (root)
+            .permitAll(); //adds logout permission
     }
 }
