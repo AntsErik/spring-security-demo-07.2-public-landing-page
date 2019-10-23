@@ -27,21 +27,25 @@
         
         <hr>
         
-        <!-- Add a link to point to /leaders ... this is for plainswalkers -->
+        <security:authorize access="hasRole('PLAINSWALKER')">
+            <!-- Add a link to point to /leaders ... this is for plainswalkers -->
         
-        <p>
-            <a href="${pageContext.request.contextPath}/leaders">Plainswalkers meeting</a>
-            (Only for Plainswalkers!)
+            <p>
+                <a href="${pageContext.request.contextPath}/leaders">Plainswalkers meeting</a>
+                (Only for Plainswalkers!)
         
-        </p>
+            </p>
+        </security:authorize>
         
-        <!-- Adding a link for access to /systems .. this is for dragons -->
+        <security:authorize access="hasRole('DRAGON')">
+            <!-- Adding a link for access to /systems .. this is for dragons -->
         
-        <p>
-            <a href="${pageContext.request.contextPath}/systems">Dragons Eye Peek</a>
-            (Dragons only!)
+            <p>
+                <a href="${pageContext.request.contextPath}/systems">Dragons Eye Peek</a>
+                (Dragons only!)
         
-        </p>
+            </p>
+        </security:authorize>
         
         <hr>
         
