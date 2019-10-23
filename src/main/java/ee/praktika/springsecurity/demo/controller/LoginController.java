@@ -13,4 +13,10 @@ public class LoginController {
         return "fancy-login"; //maps to the fancy bootstrap login container view
     }
 
+    //adding access-denied request mapping
+    @GetMapping( "/access-denied" )
+    public String showAccessDenied(){
+
+        return "access-denied";
+    }
 }
