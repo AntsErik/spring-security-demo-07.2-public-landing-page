@@ -27,6 +27,16 @@
         
         <hr>
         
+        <!-- Add a link to point to7leaders ... this is for plainswalkers -->
+        
+        <p>
+            <a href="${pageContext.request.contextPath} }">Plainswalkers meeting</a>
+            (Only for Plainswalkers!)
+        
+        </p>
+        
+        <hr>
+        
         <!-- Add a logout button -->
         <form:form action="${pageContext.request.contextPath }/logout" method="POST">
         

@@ -16,4 +16,10 @@ public class DemoController {
 
         return "home";
     }
+
+    //add request mapping for /leaders" )
+    public String showLeaders(){
+
+        return "leaders";
+    }
 }
