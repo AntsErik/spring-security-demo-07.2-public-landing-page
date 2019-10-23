@@ -25,9 +25,10 @@
             Role(s): <security:authentication property="principal.authorities" />
         </p>
         
+        <security:authorize access="hasRole('PLAINSWALKER')">
+                
         <hr>
         
-        <security:authorize access="hasRole('PLAINSWALKER')">
             <!-- Add a link to point to /leaders ... this is for plainswalkers -->
         
             <p>
@@ -38,6 +39,8 @@
         </security:authorize>
         
         <security:authorize access="hasRole('DRAGON')">
+                                
+        <hr>
             <!-- Adding a link for access to /systems .. this is for dragons -->
         
             <p>
